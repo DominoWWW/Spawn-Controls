@@ -1,5 +1,5 @@
 # Spawn Control
-### Download:[Releases Page](https://github.com/DominoWWW/Always-Spawn-Here/releases)
+### Download:[Releases Page](https://github.com/DominoWWW/Spawn-Control/releases)
 
 Spawn Control is a Minecraft Datapack made specifically for minecraft hubs/lobbys, and allows an op player to set a spawn point where all players spawn from:
 # Features
