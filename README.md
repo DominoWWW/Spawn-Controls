@@ -4,8 +4,8 @@
 Spawn Controls is a Minecraft Datapack allows an op player to set a spawn point where players will spawn from.
 ## Features
 - Dead players will spawn at the spawn point.
-- players that join will spawn at the spawn point.
-- players that join of the first time will spawn at the spawn point.
+- Players that join will spawn at the spawn point.
+- Players that join of the first time will spawn at the spawn point.
 - Customizable view direction.
 - Preserves original spawn points and Worldspawns settings.
 
@@ -14,7 +14,7 @@ Spawn Controls is a Minecraft Datapack allows an op player to set a spawn point 
 Insert the zip file into your datapacks folder.
 
 #### Uninstalling:
-red the uninstall command and delete the zip file.
+Run the uninstall command and delete the zip file.
 
 #### Notes:
 The chunk that the spawn point is set in will always be loaded due to technical limitations.
