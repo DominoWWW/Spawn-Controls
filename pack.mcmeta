@@ -1,0 +1,8 @@
+{	
+	"author": "DominoWWW",
+	"version": "1.0.0",
+	"pack": {
+		"pack_format": 10,
+		"description": ["",{"text":"Spawn Controls spawns players at a set location when joining or dying with:\n","color":"yellow"},{"text":"/function spawn_controls:set_spawn","bold":true,"color":"gold"},{"text":"\nby DominoWWW","color":"gold","italic":true}]
+	}
+}
