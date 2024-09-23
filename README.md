@@ -1,6 +1,6 @@
 # Spawn Controls
 ## Download: [Releases Page](https://github.com/DominoWWW/Spawn-Controls/releases)
-#### Minecraft Version: 1.19.x
+#### Minecraft Version: 1.21.x
 Spawn Controls is a Minecraft Datapack allows an op player to set a spawn point where players will spawn from.
 ## Features
 - Dead players will spawn at the spawn point.
