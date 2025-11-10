@@ -1,0 +1,44 @@
+name: zip
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches:
+      - main
+
+env:
+  VERSION: 1.2.0
+  MINECRAFT_VERSION: 1.21.10
+  NOTES: |
+    - Updated to 1.21.10.
+    - Made it storage driven instead of entity based.
+
+jobs:
+  zip-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🤐 Zip
+        uses: actions/checkout@v2
+      - uses: vimtor/action-zip@v1.2
+        with:
+          files: /
+          dest: ${{ github.event.repository.name }}_v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}.zip
+      - name: 🫸Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            tag_name: 'v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}'
+            release_name: '${{ github.event.repository.name }} v${{ env.VERSION }} ${{ env.MINECRAFT_VERSION }}'
+            body: '${{ env.NOTES }}'
+      - name: ⬆️ Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./${{ github.event.repository.name }}_v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}.zip
+          asset_name: ${{ github.event.repository.name }}_v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}.zip
+          asset_content_type: application/zip

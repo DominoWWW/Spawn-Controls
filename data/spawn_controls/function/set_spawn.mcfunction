@@ -1,10 +1,8 @@
-execute as @e[type=marker,tag=SC.spawn] at @s run forceload remove ~ ~
+data modify storage spawn_controls:data spawn_x set from entity @s Pos[0]
+data modify storage spawn_controls:data spawn_y set from entity @s Pos[1]
+data modify storage spawn_controls:data spawn_z set from entity @s Pos[2]
 
-kill @e[type=marker,tag=SC.spawn]
+data modify storage spawn_controls:data spawn_yaw set from entity @s Rotation[0]
+data modify storage spawn_controls:data spawn_pitch set from entity @s Rotation[1]
 
-execute at @s run summon marker ~ ~ ~ {Tags:["SC.spawn"]}
-
-execute as @e[type=marker,tag=SC.spawn] at @s run forceload add ~ ~
-
-execute as @s store result entity @e[type=marker,tag=SC.spawn,limit=1] Rotation[0] float 0.00001 run data get entity @s Rotation[0] 100000
-execute as @s store result entity @e[type=marker,tag=SC.spawn,limit=1] Rotation[1] float 0.00001 run data get entity @s Rotation[1] 100000
+data modify storage spawn_controls:data spawn_dimension set from entity @s Dimension

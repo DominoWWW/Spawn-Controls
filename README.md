@@ -16,9 +16,6 @@ Insert the zip file into your datapacks folder.
 #### Uninstalling:
 Run the uninstall command and delete the zip file.
 
-#### Notes:
-The chunk that the spawn point is set in will always be loaded due to technical limitations.
-
 #### Commands:
 | Command | Descriptions |
 | --- | --- |

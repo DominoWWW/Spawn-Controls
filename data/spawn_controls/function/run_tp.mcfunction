@@ -1,0 +1,1 @@
+execute as @a[scores={SC.death=0..},nbt={DeathTime:0s}] at @s run function spawn_controls:tp with storage spawn_controls:data
